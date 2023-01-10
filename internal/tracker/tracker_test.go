@@ -1,4 +1,4 @@
-package flightpath
+package tracker
 
 import (
 	"fmt"

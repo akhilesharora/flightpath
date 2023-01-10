@@ -36,14 +36,14 @@ Find the start and end airports for the given flights.
 
 Request
 
-```http request
+```shell
 curl -d '{"flights": [["SFO", "HKO"], ["YYZ", "SFO"], ["YUL", "YYZ"], ["HKO", "ORD"]]}' -H "Content-Type: application/json" -X POST http://localhost:8080/calculate
 ```
 
 The server will respond with a JSON array containing the start and end airports:
 
 
-```http request
+```shell
 // The response will be a JSON array in the format ["<starting_airport>", "<ending_airport>"]
 {"path":["SFO","EWR"]}
 ```
@@ -57,7 +57,7 @@ package main
 import (
 	"fmt"
 
-	flight "github.com/akhilesharora/flightpath/internal/flightpath"
+	flight "github.com/akhilesharora/flightpath/internal/tracker"
 )
 
 func main() {

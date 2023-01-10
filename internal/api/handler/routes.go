@@ -4,10 +4,8 @@ import (
 	"net/http"
 	"time"
 
-	flight "github.com/akhilesharora/flightpath/internal/flightpath"
-
+	flight "github.com/akhilesharora/flightpath/internal/tracker"
 	"github.com/gorilla/mux"
-	"github.com/gregjones/httpcache"
 )
 
 //Server contains all components needed for this server
@@ -15,14 +13,12 @@ type Server struct {
 	router    *mux.Router
 	httpSrv   *http.Server
 	flightSrv *flight.Tracker
-	cache     *httpcache.MemoryCache
 }
 
 func New() *Server {
 	s := Server{
 		router:    mux.NewRouter(),
 		flightSrv: &flight.Tracker{},
-		cache:     httpcache.NewMemoryCache(),
 	}
 
 	// Accepts JSON input in the format:

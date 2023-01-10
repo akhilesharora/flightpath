@@ -2,12 +2,13 @@ package handler
 
 import (
 	"encoding/json"
-	flight "github.com/akhilesharora/flightpath/internal/flightpath"
 	"net/http"
 	"net/http/httptest"
 	"reflect"
 	"strings"
 	"testing"
+
+	flight "github.com/akhilesharora/flightpath/internal/tracker"
 )
 
 // TestHandleCalculate tests the handleCalculate handler function.
